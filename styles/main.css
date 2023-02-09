@@ -1,1 +1,157 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Babylonica&family=Hanken+Grotesk:wght@100;200;500;800;900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  background-color: #1a1c20;
+  color: #5a5959;
+  margin: 0;
+  padding: 0 4em;
+}
+
+.page-transition-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 15;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.page-transition-container .page-transition {
+  transform: scaleX(0);
+  background: #2c2c2c;
+  height: 50%;
+}
+
+nav {
+  display: flex;
+  place-items: center;
+  justify-content: space-between;
+}
+nav p {
+  font-family: "Babylonica", cursive;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 12px;
+}
+nav ul {
+  display: flex;
+  gap: 2em;
+}
+nav ul li {
+  list-style-type: none;
+  padding: 0.2em 0.75em;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: border 500ms ease-in;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #5a5959;
+}
+nav ul li:hover {
+  border: 2px solid #2c2c2c;
+  cursor: pointer;
+}
+
+main {
+  width: 80vw;
+  margin: o auto;
+  position: relative;
+  top: 10vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  place-items: center;
+  justify-content: space-between;
+}
+@-webkit-keyframes underlay-animate-reset {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+@keyframes underlay-animate-reset {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+@-webkit-keyframes underlay-animate {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes underlay-animate {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+main .img-container {
+  display: flex;
+  place-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 70vh;
+  position: relative;
+}
+main .img-container .bg-underlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #2c2c2c;
+  border-radius: 10px;
+  transform: rotate(5deg);
+  -webkit-animation: underlay-animate-reset 700ms linear;
+          animation: underlay-animate-reset 700ms linear;
+}
+main .img-container img {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  border-radius: 10px;
+}
+main .img-container:hover {
+  cursor: pointer;
+}
+main .img-container:hover .bg-underlay {
+  -webkit-animation: underlay-animate 700ms linear forwards;
+          animation: underlay-animate 700ms linear forwards;
+}
+main .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+main .desc h1 {
+  font-size: 150px;
+  font-weight: bolder;
+  line-height: 1em;
+  margin: 0;
+}/*# sourceMappingURL=main.css.map */
